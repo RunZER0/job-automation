@@ -48,10 +48,11 @@ export default function Home() {
     formData.append("cv_file", cv);
     formData.append("job_description", jobDescription);
 
-    const apiUrl =
-      endpoint === "cv"
-        ? "http://localhost:8000/cv/tailor"
-        : "http://localhost:8000/cover-letter/generate";
+const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const apiUrl =
+  endpoint === "cv"
+    ? `${apiBase}/cv/tailor`
+    : `${apiBase}/cover-letter/generate`;
 
     try {
       const res = await fetch(apiUrl, {
