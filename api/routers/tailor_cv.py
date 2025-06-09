@@ -85,7 +85,7 @@ async def tailor_cv(
     job_description: str = Form(...)
 ):
     # Step 1: Extract text from uploaded PDF CV
-    cv_text = extract_text_from_file(cv_file)
+    cv_text = await extract_text_from_file(cv_file)
 
     # Step 2: Parse the CV into sections using the LLM
     parsed_cv = parse_cv_with_llm(cv_text)

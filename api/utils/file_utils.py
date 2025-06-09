@@ -175,3 +175,4 @@ def extract_text_from_file_sync(file: UploadFile) -> str:
     # Fallback for unknown file types
     else:
         return "Unsupported file type. Please upload PDF, DOCX, or TXT."
+
